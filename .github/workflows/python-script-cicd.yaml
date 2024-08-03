@@ -1,8 +1,7 @@
 name: Python scripts
 
 on:
-  branch:
-    - main
+  branch: "main"
 
 jobs:
   run-application:
