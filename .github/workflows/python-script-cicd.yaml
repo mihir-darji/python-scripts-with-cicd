@@ -1,0 +1,17 @@
+name: Python scripts
+
+on:
+  branch:
+    - main
+
+jobs:
+  run-application:
+    runs-on: ubuntu-latest
+
+    steps:
+      name: Checkout-code
+      uses: actions/checkout@v4
+
+      name: run-script
+      run: |
+        python script.py
