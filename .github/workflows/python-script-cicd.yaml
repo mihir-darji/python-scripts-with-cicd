@@ -1,7 +1,9 @@
 name: Python scripts
 
 on:
-  branch: "main"
+  push:
+    branches:
+      - main
 
 jobs:
   run-application:
