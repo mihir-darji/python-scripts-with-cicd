@@ -1,0 +1,12 @@
+triggers (push, pull_request, schedule, workflow_dispatch)
+secret and environment variable
+specific to application(test, lint, run the application, dependancies, run project with different environment)
+artifacts
+matrix
+secret management
+caching
+parallel jobs running
+custom actions
+reuseable workflow
+github webhook
+concurrent / parallel running jobs
