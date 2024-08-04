@@ -4,10 +4,15 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    
 
 jobs:
   python-application:
     runs-on: ubuntu-latest
+
+    env:
+      PYTHON-VERSION: "3.8"
 
     steps:
       - name: checkout repo
@@ -37,7 +42,7 @@ jobs:
         run: |
           source venv/bin/activate
           black .
-          
+
       - name: Run python application
         run: |
           source venv/bin/activate
