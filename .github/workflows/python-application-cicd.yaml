@@ -11,8 +11,12 @@ jobs:
   python-application:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        python-version: ['3.7', '3.8', '3.9', '3.10']
+
     env:
-      PYTHON-VERSION: "3.8"
+      PYTHON-VERSION: ${{ matrix.python-version }}
 
     steps:
       - name: checkout repo
@@ -21,15 +25,15 @@ jobs:
       - name: python setup
         uses: actions/setup-python@v5
         with:
-          python-version: "3.8"
+          python-version: ${{ matrix.python-version }}
 
       - name: cache python virtual environment
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
 
       - name: create python virtual environment
         run: |
@@ -37,6 +41,8 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
+        env:
+          PYTHON_VERSION: ${{ matrix.python-version }}
 
       - name: check python linting
         run: |
@@ -47,3 +53,5 @@ jobs:
         run: |
           source venv/bin/activate
           python script.py
+        env:
+          PYTHON_VERSION: ${{ matrix.python-version }}
