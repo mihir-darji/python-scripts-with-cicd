@@ -35,9 +35,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-${{ matrix.python-version }}-
 
-      - name: create python virtual environment
+      - name: Upgrade pip
+        if: env.PYTHON-VERSION != '3.7'
         run: |
           pip install --upgrade pip
+        env:
+          PYTHON-VERSION: ${{ matrix.python-version }}
+
+      - name: create python virtual environment
+        run: |
           python -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
