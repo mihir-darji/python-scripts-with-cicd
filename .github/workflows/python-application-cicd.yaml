@@ -18,6 +18,14 @@ jobs:
         with:
           python-version: "3.8"
 
+      - name: cache python virtual environment
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: create python virtual environment
         run: |
           pip install --upgrade pip
@@ -25,6 +33,11 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
+      - name: check python linting
+        run: |
+          source venv/bin/activate
+          black .
+          
       - name: Run python application
         run: |
           source venv/bin/activate
