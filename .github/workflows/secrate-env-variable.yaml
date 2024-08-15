@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NAME: ${{ secrates.NAME }}
+      NAME: ${{ secrets.NAME }}
 
     steps:
       - name: Print secrets
