@@ -1,0 +1,13 @@
+name: Use env secrate and variable
+
+on:
+  push:
+
+jobs:
+  use-secrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print secrate
+        run: |
+          echo "${{secrate.NAME}}"
