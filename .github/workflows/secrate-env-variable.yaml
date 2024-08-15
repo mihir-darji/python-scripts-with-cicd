@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print secrate
+      - name: Print secrets
         run: |
-          echo "${{secrate.NAME}}"
+          echo "${{secrets.NAME}}"
