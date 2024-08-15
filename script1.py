@@ -1,3 +1,5 @@
 import os
 
-print(os.getenv("NAME"))
+name = os.getenv("NAME")
+
+print("name is equal to mihir: ", name=="mihir")
