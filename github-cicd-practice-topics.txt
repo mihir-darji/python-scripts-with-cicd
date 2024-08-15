@@ -1,10 +1,10 @@
-triggers (push, pull_request, schedule, workflow_dispatch)
-secret and environment variable
-specific to application(test, lint, run the application, dependancies, run project with different environment)
+triggers (push (done), pull_request, schedule, workflow_dispatch)
+secret and environment variable(done)
+specific to application(test, lint, run the application, dependancies, run project with different environment)(done)
 artifacts
-matrix
+matrix(done)
 secret management
-caching
+caching (done)
 parallel jobs running
 custom actions
 reuseable workflow

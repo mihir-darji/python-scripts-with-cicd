@@ -7,7 +7,14 @@ jobs:
   use-secrate:
     runs-on: ubuntu-latest
 
+    env:
+      NAME: ${{ secrates.NAME }}
+
     steps:
       - name: Print secrets
         run: |
-          echo "${{secrets.NAME}}"
+          echo "${{ secrets.NAME }}"
+
+      - name: Print env variable
+        run: |
+          echo "evironment value is ${{ env.NAME }}"
