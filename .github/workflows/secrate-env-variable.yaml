@@ -18,3 +18,12 @@ jobs:
       - name: Print env variable
         run: |
           echo "evironment value is ${{ env.NAME }}"
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-varsion: "3.8"
+
+      - name: run python script
+        run: |
+          python script1.py
