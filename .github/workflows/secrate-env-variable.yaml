@@ -7,8 +7,14 @@ jobs:
   use-secrate:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        evironment: ["dev", "stg", "prod"]
+
     env:
       NAME: ${{ secrets.NAME }}
+      ENV: ${{ matrix.evironment }}
+      VARIABLE: $ENV_VARIABLE
 
     steps:
       - name: Print secrets
