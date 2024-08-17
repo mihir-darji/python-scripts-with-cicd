@@ -14,7 +14,7 @@ jobs:
     env:
       NAME: ${{ secrets.NAME }}
       ENV: ${{ matrix.evironment }}
-      VARIABLE: ${{ ENV_VARIABLE }}
+      VARIABLE: ${{ secrets.ENV_VARIABLE }}
 
     steps:
       - name: Print secrets
