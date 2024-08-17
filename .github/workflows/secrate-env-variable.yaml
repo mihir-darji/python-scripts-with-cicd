@@ -7,34 +7,34 @@ jobs:
   use-secrate:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        evironment: ["dev", "stg", "prod"]
-
-    env:
-      NAME: ${{ secrets.NAME }}
-      ENV: ${{ matrix.evironment }}
-      VARIABLE: ${{ secrets.ENV_VARIABLE }}
+    # strategy:
+    #   matrix:
+    #     evironment: ["dev", "stg", "prod"]
+    environment: prod
+    # env:
+      # NAME: ${{ secrets.NAME }}
+      # ENV: prod
+      # VARIABLE: ${{ secrets.ENV_VARIABLE }}
 
     steps:
-      - name: Print secrets
-        run: |
-          echo "${{ secrets.NAME }}"
+      # - name: Print secrets
+      #   run: |
+      #     echo "${{ secrets.NAME }}"
 
       - name: Print env variable
         run: |
-          echo "evironment value is ${{ env.NAME }}"
+          echo "evironment value is ${{ vars.NAME }}"
           echo "variable name ${{ vars.ENV_VARIABLE }}"
           echo "env name ${{ secrets.ENV_NAME }}"
 
-      - name: checkout code
-        uses: actions/checkout@v4
+      # - name: checkout code
+      #   uses: actions/checkout@v4
 
-      - name: setup python
-        uses: actions/setup-python@v5
-        with:
-          python-varsion: "3.8"
+      # - name: setup python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-varsion: "3.8"
 
-      - name: run python script
-        run: |
-          python script1.py
+      # - name: run python script
+      #   run: |
+      #     python script1.py
