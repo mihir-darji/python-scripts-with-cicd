@@ -11,7 +11,7 @@ jobs:
       matrix:
         environment: ["dev", "stg", "prod"]
 
-    # environment: prod
+    environment: ${{ matrix.environment }}
     env:
       # NAME: ${{ secrets.NAME }}
       # ENV: prod
