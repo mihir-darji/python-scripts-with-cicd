@@ -35,6 +35,16 @@ jobs:
         with:
           python-varsion: "3.8"
 
+      - name: Set env using github_env
+        run: |
+          echo "github_env_variable_1=dynamically environment set to github_env" >> $GITHUB_ENV
+          echo "github_env_variable_2=second environment variable" >> $GITHUB_ENV
+
+      - name: Set env using linux export command
+        run: |
+          export export1="set value to export 1"
+          export export2="set value to export 2"
+
       - name: run python script
         run: |
           python script1.py
