@@ -44,6 +44,8 @@ jobs:
         run: |
           export export1="set value to export 1"
           export export2="set value to export 2"
+          ehco export1
+          echo export2
 
       - name: run python script
         run: |
