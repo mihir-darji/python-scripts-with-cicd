@@ -44,7 +44,7 @@ jobs:
         run: |
           export export1="set value to export 1"
           export export2="set value to export 2"
-          ehco $export1
+          echo $export1
           echo $export2
           # setting environment variable using export available within step.
 
