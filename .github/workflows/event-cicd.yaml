@@ -2,6 +2,9 @@ name: pull-request-schedule-workflow-dispatch
 
 on:
   pull_request:
+
+  schedule:
+    - cron: '30 18 * * *' # Runs every day at 6:30 PM UTC (which is 12:00 AM IST)
   
 jobs:
   run-scripts:
