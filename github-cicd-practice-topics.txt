@@ -1,11 +1,11 @@
-triggers (push, pull_request, schedule, workflow_dispatch)
-secret and environment variable
-specific to application(test, lint, run the application, dependancies, run project with different environment)
-artifacts
-matrix
-secret management
-caching
-parallel jobs running
+triggers (push(done), pull_request, schedule, workflow_dispatch)
+secret and environment variable (done)
+specific to application(test, lint, run the application, dependancies, run project with different environment)(done)
+artifacts(done)
+matrix(done)
+secret management(done)
+caching(done)
+parallel jobs running(done)
 custom actions
 reuseable workflow
 github webhook
