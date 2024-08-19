@@ -54,7 +54,8 @@ jobs:
 
       - name: show the content of downloaded artifact file
         run: |
-          cat ./download-output-dir/python-output.txt
+          cd download-output-dir && ls
+          # cat ./download-output-dir/python-output.txt
       
 
       
