@@ -1,0 +1,39 @@
+name: artifact-with-two-jobs
+
+on:
+  push:
+    branches:
+      - feat/artifact-learning
+
+jobs:
+  upload_artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+
+      - name: run-python-script
+        run: |
+          python script.py > output-text.txt
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: output-dir
+
+  download_artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: download-output-dir
+
+      - name: show file contents
+        run: |
+          cat download-output-dir/output-text.txt
