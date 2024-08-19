@@ -3,7 +3,7 @@ name: artifact cicd
 on:
   push:
     branches:
-      - artifact-learning
+      - feat/artifact-learning
 
 jobs:
   artifact-learning-steps:
