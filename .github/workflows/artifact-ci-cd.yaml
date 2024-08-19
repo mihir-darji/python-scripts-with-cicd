@@ -55,7 +55,7 @@ jobs:
       - name: show the content of downloaded artifact file
         run: |
           cd download-output-dir && ls
-          cat ./download-output-dir/script-output.txt
+          cat script-output.txt
       
 
       
