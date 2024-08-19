@@ -3,7 +3,7 @@ secret and environment variable(done)
 specific to application(test, lint, run the application, dependancies, run project with different environment)(done)
 artifacts
 matrix(done)
-secret management
+secret management(Done)
 caching (done)
 parallel jobs running
 custom actions
