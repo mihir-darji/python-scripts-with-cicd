@@ -25,6 +25,7 @@ jobs:
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         with:
+          name: artifacts
           path: output-dir
 
   download_artifact:
@@ -35,8 +36,10 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v4
         with:
+          name: artifacts
           path: download-output-dir
 
       - name: show file contents
         run: |
-          cat ./download-output-dir/output-text.txt
+          cd download-output-dir && ls
+          cat output-text.txt
