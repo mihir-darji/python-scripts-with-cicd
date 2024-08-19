@@ -20,7 +20,7 @@ jobs:
 
       - name: run-python-script
         run: |
-          python script.py > output-text.txt
+          python script.py > output-dir/output-text.txt
 
       - name: upload artifacts
         uses: actions/upload-artifact@v4
