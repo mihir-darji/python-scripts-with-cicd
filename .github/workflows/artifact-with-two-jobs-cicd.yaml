@@ -39,4 +39,4 @@ jobs:
 
       - name: show file contents
         run: |
-          cat download-output-dir/output-text.txt
+          cat ./download-output-dir/output-text.txt
