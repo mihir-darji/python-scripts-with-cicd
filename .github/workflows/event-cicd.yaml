@@ -4,7 +4,18 @@ on:
   pull_request:
 
   schedule:
-    - cron: '30 18 * * *' # Runs every day at 6:30 PM UTC (which is 12:00 AM IST)
+    - cron: '35 19 * * *' # Runs every day at 6:30 PM UTC (which is 12:00 AM IST)
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'the environment to deploy to'
+        required: true
+        default: 'stg'
+        type: choice
+        options:
+          - stg
+          - prod
   
 jobs:
   run-scripts:
