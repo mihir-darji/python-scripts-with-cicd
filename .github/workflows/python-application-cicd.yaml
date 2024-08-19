@@ -3,7 +3,7 @@ name: Python application
 on:
   push:
     branches:
-      - main
+      - artifact-learning
 
 jobs:
   python-application:
