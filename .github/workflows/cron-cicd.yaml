@@ -1,0 +1,16 @@
+name: Run Every Two Minutes
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'  # This cron expression triggers the workflow every 2 minutes
+
+jobs:
+  run-every-two-minutes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Print current time
+      run: date
