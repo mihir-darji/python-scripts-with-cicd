@@ -1,4 +1,4 @@
-triggers (push(done), pull_request, schedule, workflow_dispatch)
+triggers (push(done), pull_request, schedule, workflow_dispatch)(done)
 secret and environment variable (done)
 specific to application(test, lint, run the application, dependancies, run project with different environment)(done)
 artifacts(done)
