@@ -1,0 +1,19 @@
+name: custom github action with cicd
+
+on:
+  push:
+    branches:
+      - feat/github-custom-action
+
+jobs:
+  custom-action-with-js:
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v4
+
+      - name: run custom action
+        uses: mihir-darji/python-scripts-with-cicd@main
+        with:
+          who-to-greet: 'mihir'
