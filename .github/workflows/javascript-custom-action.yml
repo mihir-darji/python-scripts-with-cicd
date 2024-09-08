@@ -10,7 +10,15 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4
-        
+
+      - name: setup node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: install node module
+        run: npm install
+
       - name: Hello world action step
         id: hello
         uses: mihir-darji/python-scripts-with-cicd@v1.1
