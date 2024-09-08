@@ -21,7 +21,7 @@ jobs:
 
       - name: Hello world action step
         id: hello
-        uses: mihir-darji/python-scripts-with-cicd@v1.1
+        uses: mihir-darji/python-scripts-with-cicd@feat/github-javascript-custom-action
         with:
           who-to-greet: 'mihir the darji'
       # Use the output from the `hello` step
